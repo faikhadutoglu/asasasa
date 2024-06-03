@@ -12,4 +12,4 @@ target_link_libraries(main developer)
 add_compile_options(-Wall -Wextra -pedantic)
 
 # Pfaddefinition für Logos
-add_definitions(-DLOGO_PATH="/path/to/logos")
+add_definitions(-DLOGO_PATH="${CMAKE_SOURCE_DIR}/logos")
