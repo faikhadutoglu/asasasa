@@ -3,9 +3,11 @@ project(DeveloperApp)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(developer STATIC developer.cpp junior_developer.cpp senior_developer.cpp)
+include_directories(src)
 
-add_executable(main main.cpp)
+add_library(developer STATIC src/developer.cpp src/junior_developer.cpp src/senior_developer.cpp)
+
+add_executable(main src/main.cpp)
 
 target_link_libraries(main developer)
 

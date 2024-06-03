@@ -1,0 +1,5 @@
+mkdir -p build
+cd build             in build ordner terminal eingeben
+cmake ..
+make
+./main
