@@ -1,0 +1,4 @@
+/workspaces/asasasa/build/CMakeFiles/developer.dir
+/workspaces/asasasa/build/CMakeFiles/main.dir
+/workspaces/asasasa/build/CMakeFiles/edit_cache.dir
+/workspaces/asasasa/build/CMakeFiles/rebuild_cache.dir
