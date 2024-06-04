@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/workspaces/asasasa/build",
+  "command": "/usr/bin/c++ -DLOGO_PATH=\\\"/workspaces/asasasa/logos\\\" -I/workspaces/asasasa/src -g -std=gnu++14 -o CMakeFiles/developer.dir/src/developer.cpp.o -c /workspaces/asasasa/src/developer.cpp",
+  "file": "/workspaces/asasasa/src/developer.cpp",
+  "output": "CMakeFiles/developer.dir/src/developer.cpp.o"
+},
+{
+  "directory": "/workspaces/asasasa/build",
+  "command": "/usr/bin/c++ -DLOGO_PATH=\\\"/workspaces/asasasa/logos\\\" -I/workspaces/asasasa/src -g -std=gnu++14 -o CMakeFiles/developer.dir/src/developer_child.cpp.o -c /workspaces/asasasa/src/developer_child.cpp",
+  "file": "/workspaces/asasasa/src/developer_child.cpp",
+  "output": "CMakeFiles/developer.dir/src/developer_child.cpp.o"
+},
+{
+  "directory": "/workspaces/asasasa/build",
+  "command": "/usr/bin/c++ -DLOGO_PATH=\\\"/workspaces/asasasa/logos\\\" -I/workspaces/asasasa/src -g -std=gnu++14 -o CMakeFiles/main.dir/src/main.cpp.o -c /workspaces/asasasa/src/main.cpp",
+  "file": "/workspaces/asasasa/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
+}
+]

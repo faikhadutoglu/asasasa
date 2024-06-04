@@ -1,46 +1,56 @@
-#include "junior_developer.hpp"
-#include "senior_developer.hpp"
+#include "developer_child.hpp"
+
 #include <vector>
+
 #include <memory>
+
 #include <iostream>
+
 #include <fstream>
 
+// Hilfsfunktion zum Überprüfen der Dateiexistenz
+bool file_exists(const std::string& path) {
+    std::ifstream file(path);
+    return file.good(); // Überprüfen, ob die Datei geöffnet werden kann
+}
+
 int main() {
+    std::string logo_path = "../logos/"; // Pfad zu den Logo-Dateien
+
     // Überprüfen, ob die Logo-Dateien existieren
-    std::ifstream file_spiderman("../logos/spiderman.txt");
-    if (!file_spiderman) {
-        std::cerr << "Unable to open file: ../logos/spiderman.txt" << std::endl;
-        return 1;
+    if (!file_exists(logo_path + "spiderman.txt")) {
+        std::cerr << "Unable to open file: " << logo_path << "spiderman.txt" << std::endl;
+        return 1; // Programm beenden, wenn die Datei nicht gefunden wird
     }
-    
-    std::ifstream file_wonderwoman("../logos/wonderwoman.txt");
-    if (!file_wonderwoman) {
-        std::cerr << "Unable to open file: ../logos/wonderwoman.txt" << std::endl;
-        return 1;
+    if (!file_exists(logo_path + "wonderwoman.txt")) {
+        std::cerr << "Unable to open file: " << logo_path << "wonderwoman.txt" << std::endl;
+        return 1; // Programm beenden, wenn die Datei nicht gefunden wird
     }
 
-    // Entwickler-Objekte instanziieren
+    // Vektor von shared_ptr zu Developer-Objekten
     std::vector<std::shared_ptr<Developer>> developers;
+
+    // Erstellen von JuniorDeveloper und SeniorDeveloper Objekten
     auto junior = std::make_shared<JuniorDeveloper>("Peter Parker", "Spiderman");
     auto senior = std::make_shared<SeniorDeveloper>("Diana Prince", "Wonder Woman");
 
-    // Logos laden
+    // Laden der Logos aus den Dateien
     try {
-        junior->load_logo_from_file("../logos/spiderman.txt");
-        senior->load_logo_from_file("../logos/wonderwoman.txt");
+        junior->load_logo_from_file(logo_path + "spiderman.txt");
+        senior->load_logo_from_file(logo_path + "wonderwoman.txt");
     } catch (const std::runtime_error& e) {
         std::cerr << e.what() << std::endl;
-        return 1;
+        return 1; // Programm beenden, wenn das Laden der Logos fehlschlägt
     }
 
-    // Entwickler zum Vektor hinzufügen
+    // Hinzufügen der Developer-Objekte zum Vektor
     developers.push_back(junior);
     developers.push_back(senior);
 
-    // Über den Vektor iterieren und Problem lösen lassen
+    // Iteration über den Vektor und Aufruf der solve_problem Methode für jedes Developer-Objekt
     for (const auto& dev : developers) {
         dev->solve_problem();
     }
 
-    return 0;
+    return 0; // Programm erfolgreich beenden
 }
